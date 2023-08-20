@@ -1,0 +1,264 @@
+﻿Build1=Default,b4a.BellNumber2
+Build2=New_1,b4a.BellNumber2
+File1=Hydrogen(1+).png
+File2=MainPage.bal
+File3=Methane.png
+File4=Nitrogen.png
+File5=Orthoborate.png
+File6=Water.png
+FileGroup1=Default Group
+FileGroup2=Default Group
+FileGroup3=Default Group
+FileGroup4=Default Group
+FileGroup5=Default Group
+FileGroup6=Default Group
+Group=Default Group
+Library1=core
+Library2=b4xpages
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="33"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
+Module1=|relative|..\B4XMainPage
+Module2=Starter
+NumberOfFiles=6
+NumberOfLibraries=2
+NumberOfModules=2
+Version=12.5
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: BellNumber2
+	#VersionCode: 1
+	#VersionName: 20230820
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: portrait
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: True
+#End Region
+
+'#BridgeLogger: True
+
+Sub Process_Globals
+	Public ActionBarHomeClicked As Boolean
+End Sub
+
+Sub Globals
+
+	Private Spinner1 As Spinner
+	
+	Private Label3 As Label
+	Private Label4 As Label
+	Private Label5 As Label
+	Private ImageView1 As ImageView
+	Private Label6 As Label
+	Dim NOP As Int
+	Dim NOA As String
+	
+	Dim list1 As List
+	Dim list2 As List
+	Dim list3 As List
+	Dim list4 As List
+	Dim list5 As List
+	Dim list6 As List
+	Dim list7 As List
+	Dim list8 As List
+	
+	Dim i As Int = 0
+	Dim j As Int
+	Dim sum1 As Int = 0
+	Dim sum2 As Int = 0
+	Dim sum3 As Int = 0
+	Dim sum4 As Int = 0
+	
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	Dim pm As B4XPagesManager
+	pm.Initialize(Activity)
+	Activity.LoadLayout("MainPage")
+	Activity.Title="BellNumber2"
+	Spinner1.Add("1")
+	Spinner1.Add("2")
+	Spinner1.Add("3")
+	Spinner1.Add("4")
+	Spinner1.Add("5")
+	
+	
+	
+End Sub
+
+'Template version: B4A-1.01
+#Region Delegates
+
+Sub Activity_ActionBarHomeClick
+	ActionBarHomeClicked = True
+	B4XPages.Delegate.Activity_ActionBarHomeClick
+	ActionBarHomeClicked = False
+End Sub
+
+Sub Activity_KeyPress (KeyCode As Int) As Boolean
+	Return B4XPages.Delegate.Activity_KeyPress(KeyCode)
+End Sub
+
+Sub Activity_Resume
+	B4XPages.Delegate.Activity_Resume
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+	B4XPages.Delegate.Activity_Pause
+End Sub
+
+Sub Activity_PermissionResult (Permission As String, Result As Boolean)
+	B4XPages.Delegate.Activity_PermissionResult(Permission, Result)
+End Sub
+
+Sub Create_Menu (Menu As Object)
+	B4XPages.Delegate.Create_Menu(Menu)
+End Sub
+
+#if Java
+public boolean _onCreateOptionsMenu(android.view.Menu menu) {
+	 processBA.raiseEvent(null, "create_menu", menu);
+	 return true;
+	
+}
+#End If
+#End Region
+
+'Program code should go into B4XMainPage and other pages.
+
+
+
+Private Sub Spinner1_ItemClick (Position As Int, Value As Object)
+	Select Position
+		Case 0: NOP = 1
+		Case 1: NOP = 14
+		Case 2: NOP = 10
+		Case 3: NOP = 29
+		Case 4: NOP = 10
+	End Select
+	
+	NOA = Spinner1.SelectedItem
+	
+	If NOA = "1"  Then
+		Label3.Text = NOP
+		Label4.Text = "Chemical Name :" & CRLF & CRLF & "Hydron"
+		Label5.Text = "Chemical Formula"
+		ImageView1.Bitmap=LoadBitmapSample(File.DirAssets,"Hydrogen(1+).png",1000,1000)
+		Label6.Text = "Algorithm :" & CRLF & CRLF & "Collatz Conjecture"
+	End If
+	
+	If NOA ="2"  Then
+		Label3.Text = NOP
+		Label4.Text = "Chemical Name :" & CRLF & CRLF & "Nitrogen"
+		Label5.Text = "Chemical Formula"
+		ImageView1.Bitmap=LoadBitmapSample(File.DirAssets,"Nitrogen.png",1000,1000)
+		Label6.Text = "Algorithm :" & CRLF & CRLF & "My Method"
+	End If
+	
+	If NOA="3" Then
+		Label3.Text = NOP
+		Label4.Text = "Chemical Name :" & CRLF & CRLF & "Water"
+		Label5.Text = "Chemical Formula"
+		ImageView1.Bitmap=LoadBitmapSample(File.DirAssets,"Water.png",1000,1000)
+		Label6.Text = "Algorithm :" & CRLF & CRLF & "Collatz Conjecture"& CRLF & CRLF & "My Method"
+	End If
+	
+	If NOA="4" Then
+		Label3.Text = NOP
+		Label4.Text = "Chemical Name :" & CRLF & CRLF & "Orthoborate"
+		Label5.Text = "Chemical Formula"
+		ImageView1.Bitmap=LoadBitmapSample(File.DirAssets,"Orthoborate.png",1000,1000)
+		Label6.Text = "Algorithm :" & CRLF & CRLF & "Collatz Conjecture"
+	End If
+	If NOA="5"  Then
+		Label3.Text = NOP
+		Label4.Text = "Chemical Name :" & CRLF & CRLF & "Methane"
+		Label5.Text = "Chemical Formula"
+		ImageView1.Bitmap=LoadBitmapSample(File.DirAssets,"Methane.png",1000,1000)
+		Label6.Text = "Algorithm :" & CRLF & CRLF & "My Method"
+	End If
+	
+End Sub
+
+' Here is the explaination of Bell Number and Collatz Conjecture
+' Set information of Aitken's array
+
+	list1.Initialize2(Array As Int(1))
+	list2.Initialize2(Array As Int(1,2))
+	list3.Initialize2(Array As Int(2,3,5))
+	list4.Initialize2(Array As Int(5,7,10,15))
+	
+	' Calculate the total of each list
+	For i = 0 To list1.Size-1
+		sum1 = sum1 + list1.Get(i)
+	Next
+	' sum1 = 1
+	For i = 0 To list2.Size-1
+		sum2 = sum2 + list2.Get(i)
+	Next
+	' sum2 = 3
+	For i = 0 To list3.Size-1
+		sum3 = sum3 + list3.Get(i)
+	Next
+	' sum3 = 10
+	For i = 0 To list4.Size-1
+		sum4 = sum4 + list4.Get(i)
+	Next
+	' sum4 = 37
+	
+	' Take the result into calculation of collatz conjecture
+	list4.Initialize
+	Do While(j = 1)
+		If sum1 Mod 2 = 1 Then
+			j = 3*j + 1
+		Else
+			j = j/2
+		End If	
+	list5.Add(j)
+	Loop
+	
+	'list5.Size = 3
+	
+	Do While(j = 1)
+		If sum1 Mod 2 = 1 Then
+			j = 3*j + 1
+		Else
+			j = j/2
+		End If
+		list6.Add(j)
+	Loop
+	
+	'list6.size = 7
+	
+	Do While(j = 1)
+		If sum2 Mod 2 = 1 Then
+			j = 3*j + 1
+		Else
+			j = j/2
+		End If
+		list7.Add(j)
+	Loop
+	
+	'list7.size = 6
+	Do While(j = 1)
+		If sum1 Mod 2 = 1 Then
+			j = 3*j + 1
+		Else
+			j = j/2
+		End If
+		list8.Add(j)
+	Loop
+	
+	'list8.size = 21
+	
+	'In order to meet up with requirement of Collatz Number starting from "1" ,so each line of _
+	' value has to minus 2,so the answer is coming out
+	'Line 1 = list5.size - 2 (1)
+	'Line 2 = list5.size - 2 + list6.size - 2 (6)
+	'Line 3 = list5.size - 2 + list6.size - 2 + list7.size - 2 (10)
+	'Line 4 = list5.size - 2 + list6.size - 2 + list7.size - 2 + list8.size - 2 (29)
+
+	'Program Completed
+
